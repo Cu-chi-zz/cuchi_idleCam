@@ -1,14 +1,10 @@
 local disabledFromClient
 
 mainThread = function()
-	while true do
-        if disabledFromClient then
+	while disabledFromClient do
             InvalidateIdleCam()
             InvalidateVehicleIdleCam()
-        else
-            break
-        end
-		Wait(5000)
+	    Wait(5000)
 	end
 end
 
